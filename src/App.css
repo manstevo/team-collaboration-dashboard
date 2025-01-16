@@ -1,0 +1,252 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    overflow: hidden; /* Prevent unnecessary scrollbars */
+}
+
+h1, h2, h3, p {
+    margin: 0;
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--sidebar-bg); /* Theme variable */
+    color: var(--text-color);
+    height: 60px;
+    padding: 0 20px;
+}
+
+    nav h2 {
+        margin: 0;
+        font-size: 18px;
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        gap: 15px;
+        margin: 0;
+        padding: 0;
+    }
+
+        nav ul li a {
+            color: var(--text-color); /* Match text color with theme */
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+            nav ul li a:hover {
+                color: #aaa;
+            }
+
+/* Sidebar */
+aside {
+    background-color: var(--sidebar-bg) !important; /* Always use theme variable */
+    color: var(--text-color); /* Use theme variable */
+    width: 220px;
+    height: calc(100vh - 60px); /* Full height minus Navbar */
+    padding: 20px;
+    overflow-y: auto;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+    aside h3 {
+        margin-top: 0;
+        font-size: 18px;
+        color: #f1f1f1; /* Bright color for the title */
+        font-weight: bold;
+    }
+
+    aside ul {
+        list-style: none;
+        padding: 0;
+        margin: 20px 0;
+    }
+
+        aside ul li a {
+            text-decoration: none;
+            color: var(--text-color); /* Ensures text color is always legible */
+            background-color: transparent; /* No unnecessary backgrounds */
+            display: block;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+
+            aside ul li a:hover {
+                background-color: #444; /* Subtle hover background */
+                color: var(--button-text-color); /* Ensure legibility */
+            }
+
+
+    /* Buttons */
+    button, aside button {
+        background-color: var(--button-bg); /* Use button background color */
+        color: var(--button-text-color); /* Use button text color */
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+        button:hover, aside button:hover {
+            background-color: #0056b3; /* Slightly darker hover effect */
+        }
+
+/* Inputs */
+input {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: var(--sidebar-bg); /* Use sidebar background for inputs */
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+    width: 100%;
+}
+
+    input::placeholder {
+        color: #aaa;
+    }
+
+/* Calendar Styling */
+.react-calendar {
+    background-color: var(--sidebar-bg); /* Match sidebar background */
+    border: 1px solid #444;
+    border-radius: 10px;
+    color: var(--text-color); /* Ensure text matches theme */
+}
+
+.react-calendar__tile {
+    background-color: transparent;
+    color: var(--text-color);
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.react-calendar__tile--now {
+    background-color: #444;
+}
+
+.react-calendar__tile--active {
+    background-color: var(--button-bg); /* Use button background */
+    color: #fff;
+}
+
+.react-calendar__tile:hover {
+    background-color: #555;
+    cursor: pointer;
+}
+
+/* Scrollbar Styling */
+aside::-webkit-scrollbar,
+main::-webkit-scrollbar {
+    width: 8px;
+}
+
+aside::-webkit-scrollbar-thumb,
+main::-webkit-scrollbar-thumb {
+    background-color: #444;
+    border-radius: 10px;
+}
+
+    aside::-webkit-scrollbar-thumb:hover,
+    main::-webkit-scrollbar-thumb:hover {
+        background-color: #666;
+    }
+
+/* Light Theme */
+/* Light Theme */
+.app.light {
+    --background-color: #f5f5f5; /* Light gray for the body */
+    --text-color: #000; /* Black text */
+    --sidebar-bg: #ddd; /* Light gray for the sidebar */
+    --button-bg: #007bff; /* Blue buttons */
+    --button-text-color: #fff; /* White button text */
+}
+
+/* Dark Theme */
+.app.dark {
+    --background-color: #1e1e1e; /* Dark gray for the body */
+    --text-color: #fff; /* White text */
+    --sidebar-bg: #2c2c2c; /* Dark gray for the sidebar */
+    --button-bg: #007bff; /* Blue buttons */
+    --button-text-color: #fff; /* White button text */
+}
+
+
+/* App Container */
+.app {
+    height: 100%; /* Full height for app container */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    padding: 20px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    overflow-y: auto;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+/* Default React Calendar styles */
+.react-calendar {
+    background-color: var(--sidebar-bg);
+    border: 1px solid #444;
+    border-radius: 10px;
+    color: var(--text-color);
+}
+
+    .react-calendar button {
+        background-color: transparent;
+        color: var(--text-color);
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+        .react-calendar button:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+.react-calendar__tile {
+    background-color: var(--sidebar-bg);
+    color: var(--text-color);
+    border-radius: 5px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.react-calendar__tile--active {
+    background-color: var(--highlight-color);
+    color: #fff;
+}
+
+.react-calendar__tile--now {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--text-color);
+}
+/* Light Mode Variables */
+:root {
+    --sidebar-bg: #fff;
+    --text-color: #000;
+    --highlight-color: #007bff;
+}
+
+/* Dark Mode Variables */
+body.dark-mode {
+    --sidebar-bg: #333;
+    --text-color: #fff;
+    --highlight-color: #007bff; /* Or any other color for active days */
+}
