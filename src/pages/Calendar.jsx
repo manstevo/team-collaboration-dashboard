@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Calendar from 'react-calendar';
-cimport 'react-calendar/dist/Calendar.css';
+import 'react-calendar/dist/Calendar.css';
 
 function CalendarPage() {
     const [date, setDate] = useState(new Date());
@@ -16,7 +16,7 @@ function CalendarPage() {
                 <Calendar
                     onChange={handleDateChange}
                     value={date}
-                    tileClassName="calendar-tile"
+                    className="react-calendar" // Remove custom-calendar class
                 />
             </div>
             <p style={{ marginTop: '20px' }}>

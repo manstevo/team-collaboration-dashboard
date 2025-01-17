@@ -146,6 +146,41 @@ input {
     background-color: #555;
     cursor: pointer;
 }
+/* Custom Calendar Styles with higher specificity */
+.app.dark .custom-calendar {
+    background-color: var(--sidebar-bg) !important;
+    color: var(--text-color) !important;
+    border-color: #444;
+}
+
+    .app.dark .custom-calendar .react-calendar__tile {
+        color: var(--text-color) !important;
+        background-color: transparent !important;
+    }
+
+        .app.dark .custom-calendar .react-calendar__tile:enabled:hover,
+        .app.dark .custom-calendar .react-calendar__tile:enabled:focus {
+            background-color: #444 !important;
+        }
+
+    .app.dark .custom-calendar .react-calendar__tile--active {
+        background-color: var(--button-bg) !important;
+        color: var(--button-text-color) !important;
+    }
+
+    .app.dark .custom-calendar .react-calendar__tile--now {
+        background-color: rgba(255, 255, 255, 0.1) !important;
+    }
+
+    .app.dark .custom-calendar .react-calendar__navigation button,
+    .app.dark .custom-calendar .react-calendar__month-view__weekdays {
+        color: var(--text-color) !important;
+    }
+
+        .app.dark .custom-calendar .react-calendar__navigation button:enabled:hover,
+        .app.dark .custom-calendar .react-calendar__navigation button:enabled:focus {
+            background-color: #444 !important;
+        }
 
 /* Scrollbar Styling */
 aside::-webkit-scrollbar,
@@ -249,4 +284,84 @@ body.dark-mode {
     --sidebar-bg: #333;
     --text-color: #fff;
     --highlight-color: #007bff; /* Or any other color for active days */
+}
+/* Add these CSS rules at the end of your App.css file to ensure they have the highest specificity */
+
+/* Base calendar styles for dark mode */
+.app.dark .react-calendar {
+    background-color: var(--sidebar-bg) !important;
+    color: var(--text-color) !important;
+    border: 1px solid #444 !important;
+}
+
+/* Navigation buttons */
+.app.dark .react-calendar__navigation button {
+    color: var(--text-color) !important;
+    background-color: transparent !important;
+}
+
+/* Month and year labels */
+.app.dark .react-calendar__navigation__label,
+.app.dark .react-calendar__navigation__arrow {
+    color: var(--text-color) !important;
+}
+
+/* Weekday labels */
+.app.dark .react-calendar__month-view__weekdays {
+    color: var(--text-color) !important;
+}
+
+.app.dark .react-calendar__month-view__weekdays__weekday {
+    color: var(--text-color) !important;
+}
+
+/* Calendar tiles */
+.app.dark .react-calendar__tile {
+    background-color: transparent !important;
+    color: var(--text-color) !important;
+}
+
+    /* Hover state */
+    .app.dark .react-calendar__tile:enabled:hover,
+    .app.dark .react-calendar__tile:enabled:focus {
+        background-color: #444 !important;
+    }
+
+/* Active/selected date */
+.app.dark .react-calendar__tile--active {
+    background-color: var(--button-bg) !important;
+    color: #fff !important;
+}
+
+/* Today's date */
+.app.dark .react-calendar__tile--now {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Weekend days */
+.app.dark .react-calendar__month-view__days__day--weekend {
+    color: #ff8080 !important;
+}
+
+/* Neighboring month days */
+.app.dark .react-calendar__month-view__days__day--neighboringMonth {
+    color: #666 !important;
+}
+/* Sidebar text color in dark mode */
+.app.dark aside h3 {
+    color: var(--text-color) !important; /* Use theme text color */
+}
+
+.app.dark aside ul li {
+    color: var(--text-color) !important;
+}
+
+    .app.dark aside ul li a {
+        color: var(--text-color) !important;
+    }
+
+/* Quick Links specific styling for dark mode */
+.app.dark .quick-links h3,
+.app.dark .quick-links a {
+    color: var(--text-color) !important;
 }
