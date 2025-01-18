@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
+import '../styles/Button.css';
 
 function Messages() {
     const [messages, setMessages] = useState([]);
@@ -62,18 +63,17 @@ function Messages() {
                     }}
                 />
                 <button
-                    onClick={handleSendMessage}
-                    style={{
-                        padding: '10px 15px',
-                        backgroundColor: '#007bff',
-                        color: '#fff',
-                        border: 'none',
-                        borderRadius: '5px',
-                        cursor: 'pointer',
-                        fontWeight: 'bold',
-                    }}
-                >
-                    Send
+                    class="button"
+                    onClick={handleSendMessage}>
+                    <div
+
+                     className="wrap">
+                        <p>
+                            <span>✧</span>
+                            <span>✦</span>
+                            Send
+                        </p>
+                    </div>        
                 </button>
             </div>
         </div>
